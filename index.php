@@ -10,7 +10,7 @@
  **/
  -->
 
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
   <head>
     <title>Landing Gear</title>
@@ -58,7 +58,7 @@
   </head>
 
   <body>
-  
+  <form action="submit.html">
     <nav class="navbar navbar-inverse">
 
       <div class="container-fluid">
@@ -147,9 +147,9 @@
 
         </div>
 
-        <input class="btn btn-primary" type="submit" value="Submit">
+        <input class="btn btn-primary" type="submit" value="Submit">        
 
-      </div> <!-- end of class="col-sm-8 text-left" -->
+      </div> <!-- end of class="col-sm-8 text-left" -->      
 
       <!-- Remove the ad bar 
       <div class="col-sm-2 sidenav">
@@ -162,6 +162,7 @@
       </div> -->
 
     </div> <!-- end of div class="container-fluid text-center" -->
+  </form>
 
     <footer class="container-fluid text-center">
       <p>Footer Text</p>
