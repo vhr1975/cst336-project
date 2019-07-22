@@ -66,7 +66,6 @@
                      <li class="active"><a href="#">Home</a></li>
                      <li><a href="#">My Reservations</a></li>
                      <li><a href="dataTable.html">Data Table Selection Option</a></li>
-                     <li><a href="dataFilter.html">Data Filter Option</a></li>
                   </ul>
                   <ul class="nav navbar-nav navbar-right">
                      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Admin Login </a></li>
