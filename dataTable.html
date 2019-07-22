@@ -33,18 +33,6 @@
               });
             });
           });
-         
-         /*
-           jQuery functions to select search criteria
-         */
-          $(document).ready(function()
-         {
-         $('#btnGetValue').click(function() 
-         {
-            var selValue = $('input[name=rbnNumber]:checked').val(); 
-            $('p').html('<br/>Search criteria selected is : <b>' + selValue + '</b>');
-         });
-         });
       </script>
       <!-- page css style -->
       <style>
@@ -65,7 +53,7 @@
          <strong>Info!</strong> TODO investigate how the DB will return data to page.<br>
          <strong>Info!</strong> TODO investigate logic to only allow valid options once user has made selections.<br>
       </div>
-      <h4>Search by Airport, Flight or date please select one:<h4>
+      <h4>Search by Airport, Flight or Date please select one:<h4>
       <input type="radio" name="rbnNumber" value="Airport" /> Airport
       <input type="radio" name="rbnNumber" value="Flight" /> Flight
       <input type="radio" name="rbnNumber" value="Date" /> Date
@@ -100,16 +88,23 @@
                      <td>Oakland</td>
                      <td>Barcelona</td>
                      <td>DY7076</td>
-                     <td>Tuesday October 15 2019</td>
+                     <td>October 15 2019</td>
                      <td><input type="checkbox" name="check-tab1"></td>
                   </tr>
                   <tr>
                      <td>Sacramento</td>
                      <td>Portland</td>
                      <td>WN1785</td>
-                     <td>Tuesday October 16 2019</td>
+                     <td>October 16 2019</td>
                      <td><input type="checkbox" name="check-tab1"></td>
                   </tr>
+                  <tr>
+                     <td>San Francisco</td>
+                     <td>San Salvador</td>
+                     <td>AV561</td>
+                     <td>April 30 2019</td>
+                     <td><input type="checkbox" name="check-tab1"></td>
+                  </tr>  
                   <tr>
                      <td>Los Angeles</td>
                      <td>Rome</td>
@@ -166,6 +161,41 @@
                      <td>June 10 2019</td>
                      <td><input type="checkbox" name="check-tab1"></td>
                   </tr>
+                  <tr>
+                     <td>San Francisco</td>
+                     <td>Lisbon</td>
+                     <td>TP236</td>
+                     <td>January 30 2019</td>
+                     <td><input type="checkbox" name="check-tab1"></td>
+                  </tr>
+                  <tr>
+                     <td>Chicago</td>
+                     <td>Los Angeles</td>
+                     <td>UA566</td>
+                     <td>September 3 2019</td>
+                     <td><input type="checkbox" name="check-tab1"></td>
+                  </tr>                  
+                  <tr>
+                     <td>Los Angeles</td>
+                     <td>Honolulu</td>
+                     <td>UA1170</td>
+                     <td>September 3 2019</td>
+                     <td><input type="checkbox" name="check-tab1"></td>
+                  </tr>                  
+                  <tr>
+                     <td>Honolulu</td>
+                     <td>Sydney</td>
+                     <td>JQ4</td>
+                     <td>September 3 2019</td>
+                     <td><input type="checkbox" name="check-tab1"></td>
+                  </tr>
+                  <tr>
+                     <td>San Francisco</td>
+                     <td>London</td>
+                     <td>VS42</td>
+                     <td>March 23 2019</td>
+                     <td><input type="checkbox" name="check-tab1"></td>
+                  </tr>                  
                </tbody>
             </table>
             <p>Note we must start the search in tbody, to prevent filtering the table headers.</p>
@@ -257,6 +287,18 @@
                         console.log(checkboxes.length);
                      }
          } // function tab2_To_tab1()
+                  
+         /*
+           jQuery functions to select search criteria
+         */
+          $(document).ready(function()
+         {
+            $('#btnGetValue').click(function() 
+            {
+               var selValue = $('input[name=rbnNumber]:checked').val(); 
+               $('p').html('<br/>Search criteria selected is : <b>' + selValue + '</b>');
+            });
+         });
          
       </script>    
    </body>
