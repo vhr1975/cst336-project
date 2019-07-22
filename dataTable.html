@@ -1,0 +1,195 @@
+<!--
+/**
+ * Class: CST-336
+ * Final Project: HTML, CSS, Node.js and Express.js
+ * Authors:
+ * - Victor Ramirez
+ * - Aboubacar Diawara
+ * - Juan Sebastian Delgado
+ * - Cristian Palomo-Ramirez
+ **/
+ -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Data Table selction Between Two HTML Table</title>
+        <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <!-- page css style -->
+        <style>
+            
+            .container{overflow: hidden}
+            .tab{float: left}
+            .tab-btn{margin: 50px;}
+            button{display:block;margin-bottom: 20px;}
+            tr{transition:all .25s ease-in-out}
+            tr:hover{background-color: #ddd;}
+            .info {background-color: #e7f3fe;border-left: 6px solid #2196F3;}
+            
+        </style>    
+    </head>
+    <body>
+      
+        <h1>Welcome to Landing Gear</h1>
+
+        <p>Please select a flight. A data table option where users can select from a table.</p>
+        
+        <div class="info">
+            <p>
+                <strong>Info!</strong> TODO investigate other tables to display.<br>
+                <strong>Info!</strong> TODO investigate how the DB will return data to page.<br>
+                <strong>Info!</strong> TODO investigate logic to only allow valid options once user has made selections.<br>
+            </p>
+        </div>
+
+        <!-- container to house the data tables -->
+        <div class="container">
+            <h4>By Airport</h4>
+            <!-- tab 1 that contains table 1-->
+            <div class="tab">
+                <table id="table1" border="1">
+                    <tr>                    
+                        <th>From</th>
+                        <th>To</th>
+                        <th>Flight</th>
+                        <th>Date</th>
+                        <th>Select</th>
+                    </tr>
+                    <tr>
+                    <!--
+                        <option>Flight DY7076 Oakland to Barcelona Tuesday October, 15, 2019</option>
+                        <option>Flight WN1785 Sacramento to Portland Wednesday October, 16, 2019</option>
+                        <option>Flight DY7116 Los Angeles to Rome Wednesday October, 16, 2019</option>
+                        <option>Flight AS3354 San Jose to Dallas Wednesday October, 16, 2019</option>
+                    -->
+                        <td>Oakland</td>
+                        <td>Barcelona</td>
+                        <td>DY7076</td>
+                        <td>Tuesday October 15 2019</td>
+                        <td><input type="checkbox" name="check-tab1"></td>
+                    </tr>
+                     <tr>
+                        <td>Sacramento</td>
+                        <td>Portland</td>
+                        <td>WN1785</td>
+                        <td>Tuesday October 16 2019</td>
+                        <td><input type="checkbox" name="check-tab1"></td>
+                    </tr>
+                    <tr>
+                        <td>Los Angeles</td>
+                        <td>Rome</td>
+                        <td>DY7116</td>
+                        <td>October 16 2019</td>
+                        <td><input type="checkbox" name="check-tab1"></td>
+                    </tr>
+                     <tr>
+                        <td>San Jose</td>
+                        <td>Dallas</td>
+                        <td>AS3354</td>
+                        <td>October 16 2019</td>
+                        <td><input type="checkbox" name="check-tab1"></td>
+                    </tr>
+                </table>
+            </div>
+            <!-- div that houses the selection arrows (buttons) -->
+            <div class="tab tab-btn">
+                <button onclick="tab1_To_tab2();">>>>>></button>
+                <button onclick="tab2_To_tab1();"><<<<<</button>
+            </div>            
+            <!-- tab 2 that contains table 2-->
+            <div class="tab">
+                <table id="table2" border="1">
+                    <tr>
+                        <th>From</th>
+                        <th>To</th>
+                        <th>Flight</th>
+                        <th>Date</th>
+                        <th>Select</th>
+                    </tr>
+                </table>   
+            </div>
+        </div>
+        
+        <!-- script section where the functions are stored -->
+        <script>
+            // tab1 to tab2 function 
+            function tab1_To_tab2()
+            {
+                var table1 = document.getElementById("table1"),
+                    table2 = document.getElementById("table2"),
+                    checkboxes = document.getElementsByName("check-tab1");
+            console.log("Val1 = " + checkboxes.length);
+                 for(var i = 0; i < checkboxes.length; i++)
+                     if(checkboxes[i].checked)
+                        {
+                            // create new row and cells
+                            var newRow = table2.insertRow(table2.length),
+                                cell1 = newRow.insertCell(0),
+                                cell2 = newRow.insertCell(1),
+                                cell3 = newRow.insertCell(2),
+                                cell4 = newRow.insertCell(3);
+                                cell5 = newRow.insertCell(4);
+                            // add values to the cells
+                            cell1.innerHTML = table1.rows[i+1].cells[0].innerHTML;
+                            cell2.innerHTML = table1.rows[i+1].cells[1].innerHTML;
+                            cell3.innerHTML = table1.rows[i+1].cells[2].innerHTML;
+                            cell4.innerHTML = table1.rows[i+1].cells[3].innerHTML;
+                            cell5.innerHTML = "<input type='checkbox' name='check-tab2'>";
+                           
+                            // remove the transfered rows from the first table [table1]
+                            var index = table1.rows[i+1].rowIndex;
+                            table1.deleteRow(index);
+                            // we have deleted some rows so the checkboxes.length have changed
+                            // so we have to decrement the value of i
+                            i--;
+                           console.log(checkboxes.length);
+                        }
+            } // function tab1_To_tab2()
+            
+            // tab1 to tab2 function 
+            function tab2_To_tab1()
+            {
+                var table1 = document.getElementById("table1"),
+                    table2 = document.getElementById("table2"),
+                    checkboxes = document.getElementsByName("check-tab2");
+            console.log("Val1 = " + checkboxes.length);
+                 for(var i = 0; i < checkboxes.length; i++)
+                     if(checkboxes[i].checked)
+                        {
+                            // create new row and cells
+                            var newRow = table1.insertRow(table1.length),
+                                cell1 = newRow.insertCell(0),
+                                cell2 = newRow.insertCell(1),
+                                cell3 = newRow.insertCell(2),
+                                cell4 = newRow.insertCell(3);
+                                cell5 = newRow.insertCell(4);
+                            // add values to the cells
+                            cell1.innerHTML = table2.rows[i+1].cells[0].innerHTML;
+                            cell2.innerHTML = table2.rows[i+1].cells[1].innerHTML;
+                            cell3.innerHTML = table2.rows[i+1].cells[2].innerHTML;
+                            cell4.innerHTML = table2.rows[i+1].cells[3].innerHTML;
+                            cell5.innerHTML = "<input type='checkbox' name='check-tab1'>";
+                           
+                            // remove the transfered rows from the second table [table2]
+                            var index = table2.rows[i+1].rowIndex;
+                            table2.deleteRow(index);
+                            // we have deleted some rows so the checkboxes.length have changed
+                            // so we have to decrement the value of i
+                            i--;
+                           console.log(checkboxes.length);
+                        }
+            } // function tab2_To_tab1()
+            
+        </script>    
+        
+    </body>
+
+    <footer class="container-fluid text-center">
+        <p>Footer Text</p>
+    </footer>
+
+</html>
