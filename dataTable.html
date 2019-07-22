@@ -43,6 +43,7 @@
          tr{transition:all .25s ease-in-out}
          tr:hover{background-color: #ddd;}
          .info {background-color: #e7f3fe;border-left: 6px solid #2196F3;}
+         .buttonHolder{ text-align: center; }
       </style>
    </head>
    <body>
@@ -58,7 +59,7 @@
       <input type="radio" name="rbnNumber" value="Flight" /> Flight
       <input type="radio" name="rbnNumber" value="Date" /> Date
       <br/><br/>
-      <input type="button" id="btnGetValue" Value="Get Value" />
+      <input type="button" id="btnGetValue" Value="Set Search Value" />
       <p></p>
       <input id="myInput" type="text" placeholder="Search..">
       <br><br>
@@ -198,7 +199,7 @@
                   </tr>                  
                </tbody>
             </table>
-            <p>Note we must start the search in tbody, to prevent filtering the table headers.</p>
+            *Note we must start the search in tbody, to prevent filtering the table headers.
          </div>
          <!-- div that houses the selection arrows (buttons) -->
          <div class="tab tab-btn">
@@ -217,7 +218,12 @@
                </tr>
             </table>
          </div>
+      </div>     
+
+      <div class="buttonHolder">
+         <input class="btn btn-primary" type="submit" value="Submit">        
       </div>
+
       <!-- script section where the functions are stored -->
       <script>
          // tab1 to tab2 function 
@@ -303,6 +309,6 @@
       </script>    
    </body>
    <footer class="container-fluid text-center">
-      <p>Footer Text</p>
+      Footer Text
    </footer>
 </html>
