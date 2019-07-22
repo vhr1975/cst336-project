@@ -37,13 +37,16 @@
       <!-- page css style -->
       <style>
          .container{overflow: hidden}
-         .tab{float: left}
-         .tab-btn{margin: 50px;}
-         button{display:block;margin-bottom: 20px;}
+         .tab1{float: left}
+         .tab2{float: right}
+         .tab{float: center}
+         .tab-btn{margin: 1px;}
+         button{display:block;margin-bottom: 2.5px;}
          tr{transition:all .25s ease-in-out}
          tr:hover{background-color: #ddd;}
          .info {background-color: #e7f3fe;border-left: 6px solid #2196F3;}
-         .buttonHolder{ text-align: center; }
+         .buttonHolder{ text-align: center;}
+
       </style>
    </head>
    <body>
@@ -67,7 +70,7 @@
       <!-- container to house the data tables -->
       <div class="container">         
          <!-- tab 1 that contains table 1-->
-         <div class="tab">
+         <div class="tab1">
             <table id="table1" border="1">
                <thead>
                   <tr>
@@ -81,120 +84,120 @@
                <tbody id="myTable">
                   <tr>
                      <!--
-                        <option>Flight DY7076 Oakland to Barcelona Tuesday October, 15, 2019</option>
-                        <option>Flight WN1785 Sacramento to Portland Wednesday October, 16, 2019</option>
-                        <option>Flight DY7116 Los Angeles to Rome Wednesday October, 16, 2019</option>
-                        <option>Flight AS3354 San Jose to Dallas Wednesday October, 16, 2019</option>
+                        <option>Flight DY7076 Oakland to Barcelona Tuesday Oct, 15, 2019</option>
+                        <option>Flight WN1785 Sacramento to Portland Wednesday Oct, 16, 2019</option>
+                        <option>Flight DY7116 Los Angeles to Rome Wednesday Oct, 16, 2019</option>
+                        <option>Flight AS3354 San Jose to Dallas Wednesday Oct, 16, 2019</option>
                         -->
                      <td>Oakland</td>
                      <td>Barcelona</td>
                      <td>DY7076</td>
-                     <td>October 15 2019</td>
+                     <td>Oct 15 2019</td>
                      <td><input type="checkbox" name="check-tab1"></td>
                   </tr>
                   <tr>
                      <td>Sacramento</td>
                      <td>Portland</td>
                      <td>WN1785</td>
-                     <td>October 16 2019</td>
+                     <td>Oct 16 2019</td>
                      <td><input type="checkbox" name="check-tab1"></td>
                   </tr>
                   <tr>
                      <td>San Francisco</td>
                      <td>San Salvador</td>
                      <td>AV561</td>
-                     <td>April 30 2019</td>
+                     <td>Apr 30 2019</td>
                      <td><input type="checkbox" name="check-tab1"></td>
                   </tr>  
                   <tr>
                      <td>Los Angeles</td>
                      <td>Rome</td>
                      <td>DY7116</td>
-                     <td>October 16 2019</td>
+                     <td>Oct 16 2019</td>
                      <td><input type="checkbox" name="check-tab1"></td>
                   </tr>
                   <tr>
                      <td>San Jose</td>
                      <td>Dallas</td>
                      <td>AS3354</td>
-                     <td>October 16 2019</td>
+                     <td>Oct 16 2019</td>
                      <td><input type="checkbox" name="check-tab1"></td>
                   </tr>
                   <tr>
                      <td>San Francisco</td>
                      <td>Madrid</td>
                      <td>LV26224</td>
-                     <td>December 15 2019</td>
+                     <td>Dec 15 2019</td>
                      <td><input type="checkbox" name="check-tab1"></td>
                   </tr>
                   <tr>
                      <td>Madrid</td>
                      <td>Barcelona</td>
                      <td>IB1934</td>
-                     <td>December 15 2019</td>
+                     <td>Dec 15 2019</td>
                      <td><input type="checkbox" name="check-tab1"></td>
                   </tr>
                   <tr>
                      <td>San Francisco</td>
                      <td>Paris</td>
                      <td>AF83</td>
-                     <td>November 13 2019</td>
+                     <td>Nov 13 2019</td>
                      <td><input type="checkbox" name="check-tab1"></td>
                   </tr>
                   <tr>
                      <td>Paris</td>
                      <td>Marrakesh </td>
                      <td>AF1276</td>
-                     <td>November 13 2019</td>
+                     <td>Nov 13 2019</td>
                      <td><input type="checkbox" name="check-tab1"></td>
                   </tr>
                   <tr>
                      <td>San Francisco</td>
                      <td>Madrid</td>
                      <td>IB6174</td>
-                     <td>June 10 2019</td>
+                     <td>Jun 10 2019</td>
                      <td><input type="checkbox" name="check-tab1"></td>
                   </tr>
                   <tr>
                      <td>Madrid</td>
                      <td>Dakar</td>
                      <td>IB3328</td>
-                     <td>June 10 2019</td>
+                     <td>Jun 10 2019</td>
                      <td><input type="checkbox" name="check-tab1"></td>
                   </tr>
                   <tr>
                      <td>San Francisco</td>
                      <td>Lisbon</td>
                      <td>TP236</td>
-                     <td>January 30 2019</td>
+                     <td>Jan 30 2019</td>
                      <td><input type="checkbox" name="check-tab1"></td>
                   </tr>
                   <tr>
                      <td>Chicago</td>
                      <td>Los Angeles</td>
                      <td>UA566</td>
-                     <td>September 3 2019</td>
+                     <td>Sep 3 2019</td>
                      <td><input type="checkbox" name="check-tab1"></td>
                   </tr>                  
                   <tr>
                      <td>Los Angeles</td>
                      <td>Honolulu</td>
                      <td>UA1170</td>
-                     <td>September 3 2019</td>
+                     <td>Sep 3 2019</td>
                      <td><input type="checkbox" name="check-tab1"></td>
                   </tr>                  
                   <tr>
                      <td>Honolulu</td>
                      <td>Sydney</td>
                      <td>JQ4</td>
-                     <td>September 3 2019</td>
+                     <td>Sep 3 2019</td>
                      <td><input type="checkbox" name="check-tab1"></td>
                   </tr>
                   <tr>
                      <td>San Francisco</td>
                      <td>London</td>
                      <td>VS42</td>
-                     <td>March 23 2019</td>
+                     <td>Mar 23 2019</td>
                      <td><input type="checkbox" name="check-tab1"></td>
                   </tr>                  
                </tbody>
@@ -207,7 +210,7 @@
             <button onclick="tab2_To_tab1();"><<<<<</button>
          </div>
          <!-- tab 2 that contains table 2-->
-         <div class="tab">
+         <div class="tab2">
             <table id="table2" border="1">
                <tr>
                   <th>From</th>
