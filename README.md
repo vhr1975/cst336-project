@@ -1,2 +1,2 @@
 # cst336-project
-cst336-project
+CST 336 Final Exam Project
